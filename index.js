@@ -24,7 +24,7 @@ const teammember = require("./routes/teammember");
 const myteammember = require("./routes/myteammember");
 const tasks = require("./routes/tasks");
 const assignTasks = require("./routes/assigntask");
-
+const port = process.env.PORT || 3012;
 app.use(bodyParser.json());
 app.use(cors());
 app.use(function (req, res, next) {
@@ -51,6 +51,6 @@ app.use("/myteammember", myteammember);
 app.use("/tasks", tasks);
 app.use("/assigntasks", assignTasks);
 
-app.listen(3012);
+app.listen(port);
 
 module.exports = app;
